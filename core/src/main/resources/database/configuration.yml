@@ -1,0 +1,7 @@
+database:
+  type: sqlite # mysql | mariadb | sqlite
+  host: localhost
+  port: 3306
+  name: skyblock
+  user: root
+  password: change-me

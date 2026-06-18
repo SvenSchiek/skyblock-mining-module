@@ -1,0 +1,159 @@
+tool:
+  require_progression_tool: true
+
+  identity:
+    material: DIAMOND_PICKAXE
+    type: mining_pickaxe
+    version: 1
+
+  progression:
+    maximum_level: 100
+    base_experience: 100
+    experience_multiplier: 1.20
+
+  safety:
+    maximum_affected_blocks_per_activation: 32
+    maximum_recursion_depth: 1
+    secondary_experience_multiplier: 0.50
+    secondary_drop_multiplier: 1.00
+    allow_secondary_fragment_rolls: false
+
+  prestige:
+    maximum_prestige: 2
+
+    levels:
+      1:
+        requirements:
+          maximum_pickaxe_level: true
+          total_blocks_mined: 10000
+          total_ores_mined: 2500
+        rewards:
+          pickaxe_experience_multiplier: 0.10
+          fragment_chance_multiplier: 0.10
+          enchantment_points: 5
+
+      2:
+        requirements:
+          maximum_pickaxe_level: true
+          total_blocks_mined: 50000
+          total_ores_mined: 15000
+        rewards:
+          pickaxe_experience_multiplier: 0.15
+          fragment_chance_multiplier: 0.15
+          enchantment_points: 10
+
+  fragments:
+    common:
+      base_chance: 0.015
+      eligible_activation_sources:
+        - NORMAL
+      allow_secondary_blocks: false
+      soft_pity_start: 60
+      pity_growth: 0.0010
+      hard_pity_threshold: 180
+      prestige_base_chance_multiplier: 0.05
+      prestige_soft_pity_reduction: 5
+      prestige_pity_growth_multiplier: 0.05
+
+    rare:
+      base_chance: 0.006
+      eligible_activation_sources:
+        - NORMAL
+      allow_secondary_blocks: false
+      soft_pity_start: 120
+      pity_growth: 0.00075
+      hard_pity_threshold: 320
+      prestige_base_chance_multiplier: 0.08
+      prestige_soft_pity_reduction: 10
+      prestige_pity_growth_multiplier: 0.08
+
+    epic:
+      base_chance: 0.002
+      eligible_activation_sources:
+        - NORMAL
+      allow_secondary_blocks: false
+      soft_pity_start: 250
+      pity_growth: 0.00040
+      hard_pity_threshold: 650
+      prestige_base_chance_multiplier: 0.12
+      prestige_soft_pity_reduction: 20
+      prestige_pity_growth_multiplier: 0.12
+
+    mythic:
+      base_chance: 0.0008
+      eligible_activation_sources:
+        - NORMAL
+      allow_secondary_blocks: false
+      soft_pity_start: 500
+      pity_growth: 0.00020
+      hard_pity_threshold: 1200
+      prestige_base_chance_multiplier: 0.18
+      prestige_soft_pity_reduction: 35
+      prestige_pity_growth_multiplier: 0.18
+
+  abilities:
+    overdrive:
+      display_name: "#E9C523Overdrive"
+      description:
+        - "#8f9baaTemporarily increases mining damage"
+        - "#8f9baaand Pickaxe Experience gain."
+      enabled: true
+      maximum_level: 2
+      activation_type: RIGHT_CLICK
+      cooldown_seconds: 90
+      effect: overdrive
+      unlock_requirements:
+        pickaxe_level: 1
+        prestige: 1
+      effect_configuration:
+        duration_seconds: 12
+        damage_multiplier: 1.50
+        experience_multiplier: 1.25
+      levels:
+        1:
+          enchantment_points: 0
+          effect_configuration:
+            duration_seconds: 12
+            damage_multiplier: 1.50
+            experience_multiplier: 1.25
+        2:
+          enchantment_points: 5
+          fragments:
+            epic: 1
+          effect_configuration:
+            duration_seconds: 16
+            damage_multiplier: 1.75
+            experience_multiplier: 1.40
+
+    seismic_burst:
+      display_name: "#b56cffSeismic Burst"
+      description:
+        - "#8f9baaBreaks configured blocks around"
+        - "#8f9baathe targeted mining block."
+      enabled: true
+      maximum_level: 2
+      activation_type: SNEAK_RIGHT_CLICK
+      cooldown_seconds: 150
+      effect: seismic_burst
+      unlock_requirements:
+        pickaxe_level: 1
+        prestige: 2
+      effect_configuration:
+        radius: 2
+        maximum_blocks: 12
+        allow_fragment_rolls: 0
+      levels:
+        1:
+          enchantment_points: 0
+          effect_configuration:
+            radius: 2
+            maximum_blocks: 12
+            allow_fragment_rolls: 0
+        2:
+          enchantment_points: 8
+          fragments:
+            mythic: 1
+          effect_configuration:
+            radius: 3
+            maximum_blocks: 24
+            allow_fragment_rolls: 0

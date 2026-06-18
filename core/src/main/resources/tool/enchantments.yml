@@ -1,0 +1,161 @@
+enchantments:
+  tempered_edge:
+    display_name: "#45B8FFTempered Edge"
+    description:
+      - "#8f9baaPermanently increases custom mining damage."
+    enabled: true
+    maximum_level: 5
+    effect: damage_multiplier
+    unlock_requirements:
+      pickaxe_level: 1
+      prestige: 0
+    levels:
+      1:
+        enchantment_points: 1
+        effect_configuration:
+          value: 0.05
+      2:
+        enchantment_points: 1
+        effect_configuration:
+          value: 0.10
+      3:
+        enchantment_points: 2
+        fragments:
+          common: 2
+        breakthrough:
+          enabled: true
+          identifier: reinforced_edge
+          display_name: "Reinforced Edge"
+          description:
+            - "#8f9baaThe damage bonus receives a stronger increase."
+          effect_configuration:
+            value: 0.18
+        effect_configuration:
+          value: 0.15
+      4:
+        enchantment_points: 3
+        fragments:
+          rare: 1
+        effect_configuration:
+          value: 0.25
+      5:
+        enchantment_points: 4
+        fragments:
+          epic: 1
+        effect_configuration:
+          value: 0.35
+
+  fortune:
+    display_name: "#56D18FFortune"
+    description:
+      - "#8f9baaAdds virtual Fortune levels to custom drops."
+    enabled: true
+    maximum_level: 5
+    effect: fortune_bonus
+    unlock_requirements:
+      pickaxe_level: 15
+      prestige: 0
+      total_blocks_mined: 250
+    levels:
+      1:
+        enchantment_points: 2
+        effect_configuration:
+          value: 1
+      2:
+        enchantment_points: 3
+        fragments:
+          common: 2
+        effect_configuration:
+          value: 2
+      3:
+        enchantment_points: 4
+        fragments:
+          rare: 1
+        effect_configuration:
+          value: 3
+      4:
+        enchantment_points: 5
+        fragments:
+          epic: 1
+        effect_configuration:
+          value: 4
+      5:
+        enchantment_points: 6
+        fragments:
+          mythic: 1
+        effect_configuration:
+          value: 5
+
+  excavator:
+    display_name: "#E9C523Excavator"
+    description:
+      - "#8f9baaOccasionally mines additional nearby blocks"
+      - "#8f9baathrough the validated secondary mining pipeline."
+    enabled: true
+    maximum_level: 5
+    effect: excavator
+    effect_configuration:
+      chance: 0.06
+      radius: 1
+      maximum_blocks: 1
+      allow_fragment_rolls: 0
+    unlock_requirements:
+      groups:
+        progression:
+          pickaxe_level: 25
+          prestige: 0
+          total_blocks_mined: 1000
+          block_category: ore
+          block_category_amount: 250
+    levels:
+      1:
+        enchantment_points: 2
+        effect_configuration:
+          chance: 0.08
+          radius: 1
+          maximum_blocks: 1
+          allow_fragment_rolls: 0
+      2:
+        enchantment_points: 3
+        effect_configuration:
+          chance: 0.12
+          radius: 1
+          maximum_blocks: 2
+          allow_fragment_rolls: 0
+      3:
+        enchantment_points: 4
+        fragments:
+          rare: 2
+        effect_configuration:
+          chance: 0.16
+          radius: 1
+          maximum_blocks: 3
+          allow_fragment_rolls: 0
+        breakthrough:
+          enabled: true
+          identifier: expanded_excavation
+          display_name: "Expanded Excavation"
+          description:
+            - "#E9C523Breakthrough: #8f9baaExcavator now reaches a larger area."
+            - "#8f9baaSecondary blocks remain ineligible for fragments."
+          effect_configuration:
+            radius: 2
+            maximum_blocks: 6
+      4:
+        enchantment_points: 5
+        fragments:
+          epic: 1
+        effect_configuration:
+          chance: 0.22
+          radius: 2
+          maximum_blocks: 8
+          allow_fragment_rolls: 0
+      5:
+        enchantment_points: 7
+        fragments:
+          mythic: 1
+        effect_configuration:
+          chance: 0.30
+          radius: 2
+          maximum_blocks: 12
+          allow_fragment_rolls: 0

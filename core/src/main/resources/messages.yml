@@ -1,0 +1,106 @@
+message_type:
+  error: " #F12E44✖ #ffffff"
+  success: " #56D18F✔ #ffffff"
+  warning: " #E9C523⚠ #ffffff"
+  information: " #45B8FFℹ #ffffff"
+
+message:
+  command:
+    invalid_sender: "This command can only be executed by a player."
+    no_permission: "%{message_type.error}You do not have permission to execute this command."
+    unknown_subcommand: "%{message_type.error}An unknown subcommand was provided."
+    player_not_found: "%{message_type.error}The player '%s' could not be resolved."
+    invalid_number: "%{message_type.error}'%s' is not a valid whole number."
+
+    help:
+      header: "#45B8FFMining Command Usage (%s/%s):"
+      invalid_page: "%{message_type.error}The specified page is invalid."
+      empty_list: "%{message_type.warning}No commands are available."
+
+    mining:
+      usage: "%{message_type.warning}Usage: /mining <profile | statistics | prestige | top | animation | help>"
+      profile_loading: "%{message_type.warning}Your mining profile is currently unavailable."
+      animation_enabled: "%{message_type.success}Mining animations have been enabled."
+      animation_disabled: "%{message_type.success}Mining animations have been disabled."
+      animation_usage: "%{message_type.warning}Usage: /mining animation <on | off | toggle>"
+      top_header: "#45B8FFTop Mining Players by %s:"
+      top_entry: " #45B8FF%s. #ffffff%s #8f9baa- Prestige %s | Level %s | %s blocks"
+      top_empty: "%{message_type.warning}No mining profiles are available yet."
+      debug: "%{message_type.information}profiles=%s, sessions=%s, depleted_blocks=%s, configured_blocks=%s, configured_mines=%s"
+      get_usage: "%{message_type.warning}Usage: /mining get <player>"
+      profile: "%{message_type.information}%s: prestige=%s, level=%s, experience=%s/%s, blocks=%s"
+      reload_success: "%{message_type.success}Reloaded mining, tool, Ability and Enchantment configuration."
+      reload_failure: "%{message_type.error}Failed to reload the mining module. Check the server log."
+      reset_usage: "%{message_type.warning}Usage: /mining reset <player>"
+      reset_success: "%{message_type.success}Reset the mining profile of %s."
+      experience_usage: "%{message_type.warning}Usage: /mining experience <add | set> <player> <amount>"
+      experience_success: "%{message_type.success}%s %s Mining Experience for %s."
+      non_negative: "%{message_type.error}The value must not be negative."
+      level_usage: "%{message_type.warning}Usage: /mining level set <player> <level>"
+      level_range: "%{message_type.error}The Mining Level must be between 1 and %s."
+      level_success: "%{message_type.success}Set %s's Mining Level to %s."
+      prestige_usage: "%{message_type.warning}Usage: /mining prestige [set <player> <prestige>]"
+      prestige_range: "%{message_type.error}The Mining Prestige must be between 0 and %s."
+      prestige_set_success: "%{message_type.success}Set %s's Mining Prestige to %s."
+
+      prestige:
+        unavailable: "%{message_type.error}You must reach the maximum mining level before prestiging."
+        maximum: "%{message_type.warning}You have already reached the maximum mining prestige."
+        success: "%{message_type.success}You reached Mining Prestige %s."
+        failure: "%{message_type.error}Prestige failed: %s"
+
+    mining_admin:
+      usage: "%{message_type.warning}Usage: /miningadmin <get | setlevel | setexperience | addexperience | setprestige | reset | reload | debug>"
+      get_usage: "%{message_type.warning}Usage: /miningadmin get <player>"
+      set_level_usage: "%{message_type.warning}Usage: /miningadmin setlevel <player> <level>"
+      set_experience_usage: "%{message_type.warning}Usage: /miningadmin setexperience <player> <experience>"
+      add_experience_usage: "%{message_type.warning}Usage: /miningadmin addexperience <player> <experience>"
+      set_prestige_usage: "%{message_type.warning}Usage: /miningadmin setprestige <player> <prestige>"
+      reset_usage: "%{message_type.warning}Usage: /miningadmin reset <player>"
+      profile: "%{message_type.information}%s: prestige=%s, level=%s, experience=%s/%s, blocks=%s"
+      set_level_success: "%{message_type.success}Set %s's mining level to %s."
+      set_experience_success: "%{message_type.success}Set %s's mining experience to %s."
+      add_experience_success: "%{message_type.success}Added %s mining experience to %s."
+      set_prestige_success: "%{message_type.success}Set %s's mining prestige to %s."
+      reset_success: "%{message_type.success}Reset the mining profile of %s."
+      reload_success: "%{message_type.success}Reloaded mining configuration and messages."
+      reload_failure: "%{message_type.error}Failed to reload the mining module. Check the server log."
+      debug: "%{message_type.information}profiles=%s, sessions=%s, depleted_blocks=%s, configured_blocks=%s, configured_mines=%s"
+      out_of_range: "%{message_type.error}The value must be between %s and %s."
+      failure: "%{message_type.error}The operation failed: %s"
+
+    tool:
+      usage: "%{message_type.warning}Usage: /tool [<menu | create | enchantments | abilities | upgrade | ability-upgrade | select | ability | prestige>]"
+      missing_tool: "%{message_type.error}You must hold a progression-enabled mining tool."
+      create:
+        success: "%{message_type.success}Created a new progression-enabled mining tool."
+      upgrade:
+        usage: "%{message_type.warning}Usage: /tool upgrade <enchantment>"
+        success: "%{message_type.success}Upgraded %s to level %s."
+        breakthrough: "%{message_type.success}%s reached the %s Breakthrough."
+        failure: "%{message_type.error}Failed to upgrade enchantment: %s"
+      ability_upgrade:
+        usage: "%{message_type.warning}Usage: /tool ability-upgrade <ability>"
+        success: "%{message_type.success}Upgraded %s to level %s."
+        failure: "%{message_type.error}Failed to upgrade ability: %s"
+      select:
+        usage: "%{message_type.warning}Usage: /tool select <ability>"
+        success: "%{message_type.success}Selected ability %s."
+        failure: "%{message_type.error}Failed to select ability: %s"
+      ability:
+        success: "%{message_type.success}Activated %s."
+        failure: "%{message_type.error}Failed to activate ability: %s"
+
+  mining:
+    progression_tool_required: "%{message_type.error}You must use a progression-enabled mining tool."
+    tool_loading: "%{message_type.warning}Your mining tool progression is still loading."
+    level_required: "%{message_type.error}You need Mining Level %s to mine %s."
+    prestige_required: "%{message_type.error}You need Mining Prestige %s to mine in %s."
+    mine_level_required: "%{message_type.error}You need Mining Level %s to enter this mining tier."
+    invalid_tool: "%{message_type.error}You need to use a %s to mine %s."
+    mine_required: "%{message_type.error}This block is not inside a configured mine."
+    occupied: "%{message_type.warning}Another player is already mining this block."
+    block_depleted: "%{message_type.warning}This block is currently regenerating."
+    protection_denied: "%{message_type.error}You are not allowed to mine this block."
+    experience_action_bar: "#45B8FF+%s Mining XP #8f9baa(%s/%s)"
+    maximum_level_action_bar: "#f7c948Maximum Mining Level #8f9baa- Prestige available"

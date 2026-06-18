@@ -1,0 +1,234 @@
+mining:
+  require_registered_mine: true
+
+  level:
+    maximum_level: 100
+    base_experience: 100
+    experience_multiplier: 1.20
+
+  prestige:
+    maximum_prestige: 10
+    experience_bonus_per_prestige: 0.05
+    damage_bonus_per_prestige: 0.025
+
+  session:
+    tick_interval: 2
+    maximum_distance: 6.0
+    depleted_material: BEDROCK
+    particle_view_distance: 24.0
+
+  animation:
+    enabled: true
+    hit_particle_amount: 3
+    break_particle_amount: 22
+    respawn_particle_amount: 16
+
+blocks:
+  stone:
+    display_name: "Stone"
+    material: STONE
+    block_category: stone
+    required_level: 1
+    required_prestige: 0
+    required_tool: PICKAXE
+    durability: 12.0
+    experience: 4
+    respawn_ticks: 60
+    drops:
+      - material: COBBLESTONE
+        minimum_amount: 1
+        maximum_amount: 2
+        chance: 1.0
+
+  coal_ore:
+    display_name: "Coal Ore"
+    material: COAL_ORE
+    block_category: ore
+    ore_category: coal_ore
+    required_level: 1
+    required_prestige: 0
+    required_tool: PICKAXE
+    durability: 20.0
+    experience: 8
+    respawn_ticks: 100
+    drops:
+      - material: COAL
+        minimum_amount: 1
+        maximum_amount: 3
+        chance: 1.0
+
+  copper_ore:
+    display_name: "Copper Ore"
+    material: COPPER_ORE
+    block_category: ore
+    ore_category: copper_ore
+    required_level: 5
+    required_prestige: 0
+    required_tool: PICKAXE
+    durability: 28.0
+    experience: 12
+    respawn_ticks: 120
+    drops:
+      - material: RAW_COPPER
+        minimum_amount: 1
+        maximum_amount: 3
+        chance: 1.0
+
+  iron_ore:
+    display_name: "Iron Ore"
+    material: IRON_ORE
+    block_category: ore
+    ore_category: iron_ore
+    required_level: 10
+    required_prestige: 0
+    required_tool: PICKAXE
+    durability: 38.0
+    experience: 18
+    respawn_ticks: 140
+    drops:
+      - material: RAW_IRON
+        minimum_amount: 1
+        maximum_amount: 2
+        chance: 1.0
+
+  gold_ore:
+    display_name: "Gold Ore"
+    material: GOLD_ORE
+    block_category: ore
+    ore_category: gold_ore
+    required_level: 20
+    required_prestige: 0
+    required_tool: PICKAXE
+    durability: 55.0
+    experience: 28
+    respawn_ticks: 180
+    drops:
+      - material: RAW_GOLD
+        minimum_amount: 1
+        maximum_amount: 2
+        chance: 1.0
+
+  redstone_ore:
+    display_name: "Redstone Ore"
+    material: REDSTONE_ORE
+    block_category: ore
+    ore_category: redstone_ore
+    required_level: 30
+    required_prestige: 0
+    required_tool: PICKAXE
+    durability: 72.0
+    experience: 40
+    respawn_ticks: 200
+    drops:
+      - material: REDSTONE
+        minimum_amount: 3
+        maximum_amount: 6
+        chance: 1.0
+
+  lapis_ore:
+    display_name: "Lapis Ore"
+    material: LAPIS_ORE
+    block_category: ore
+    ore_category: lapis_ore
+    required_level: 40
+    required_prestige: 0
+    required_tool: PICKAXE
+    durability: 90.0
+    experience: 55
+    respawn_ticks: 220
+    drops:
+      - material: LAPIS_LAZULI
+        minimum_amount: 3
+        maximum_amount: 7
+        chance: 1.0
+
+  diamond_ore:
+    display_name: "Diamond Ore"
+    material: DIAMOND_ORE
+    block_category: ore
+    ore_category: diamond_ore
+    required_level: 60
+    required_prestige: 1
+    required_tool: PICKAXE
+    durability: 135.0
+    experience: 90
+    respawn_ticks: 300
+    drops:
+      - material: DIAMOND
+        minimum_amount: 1
+        maximum_amount: 2
+        chance: 1.0
+
+  emerald_ore:
+    display_name: "Emerald Ore"
+    material: EMERALD_ORE
+    block_category: ore
+    ore_category: emerald_ore
+    required_level: 80
+    required_prestige: 2
+    required_tool: PICKAXE
+    durability: 180.0
+    experience: 135
+    respawn_ticks: 360
+    drops:
+      - material: EMERALD
+        minimum_amount: 1
+        maximum_amount: 2
+        chance: 1.0
+
+  ancient_debris:
+    display_name: "Ancient Debris"
+    material: ANCIENT_DEBRIS
+    block_category: ore
+    ore_category: ancient_debris
+    required_level: 100
+    required_prestige: 3
+    required_tool: PICKAXE
+    durability: 260.0
+    experience: 225
+    respawn_ticks: 500
+    drops:
+      - material: ANCIENT_DEBRIS
+        minimum_amount: 1
+        maximum_amount: 1
+        chance: 1.0
+
+mines:
+  starter_mine:
+    display_name: "Starter Mine"
+    enabled: true
+    region_identifier: starter_mine
+    required_level: 1
+    required_prestige: 0
+    experience_multiplier: 1.0
+    damage_multiplier: 1.0
+
+  advanced_mine:
+    display_name: "Advanced Mine"
+    enabled: true
+    region_identifier: advanced_mine
+    required_level: 25
+    required_prestige: 0
+    experience_multiplier: 1.15
+    damage_multiplier: 1.05
+
+  prestige_mine:
+    display_name: "Prestige Mine"
+    enabled: true
+    region_identifier: prestige_mine
+    required_level: 1
+    required_prestige: 1
+    experience_multiplier: 1.35
+    damage_multiplier: 1.15
+
+# A mine may alternatively use its own cuboid when no region module is installed:
+#  fallback_mine:
+#    display_name: "Fallback Mine"
+#    enabled: true
+#    world_name: world
+#    minimum: { x: -50, y: 0, z: -50 }
+#    maximum: { x: 50, y: 255, z: 50 }
+#    required_level: 1
+#    required_prestige: 0
+#    experience_multiplier: 1.0
+#    damage_multiplier: 1.0

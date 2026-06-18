@@ -1,0 +1,18 @@
+name: skyblock-mining-module
+version: 1.0.0
+main: com.unityrealms.skyblock.miningmodule.MiningModule
+description: Module that manages custom mining, levels and prestige progression.
+author: Unity Realms
+api-version: '1.21.11'
+
+dependencies:
+  server:
+    server-message-framework:
+      load: BEFORE
+      required: true
+    server-library-injector:
+      load: BEFORE
+      required: true
+    server-region-module:
+      load: BEFORE
+      required: false
